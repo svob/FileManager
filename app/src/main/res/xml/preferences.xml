@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <PreferenceCategory>
+
+        <EditTextPreference
+            android:key="default_folder"
+            android:title="Default folder"
+            android:defaultValue="/storage"/>
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
