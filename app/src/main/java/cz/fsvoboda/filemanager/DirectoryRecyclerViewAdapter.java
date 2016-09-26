@@ -55,7 +55,7 @@ public class DirectoryRecyclerViewAdapter extends RecyclerView.Adapter<Directory
                             try {
                                 view.getContext().startActivity(i);
                             } catch (ActivityNotFoundException e) {
-                                Toast.makeText(view.getContext(), "nejde", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(view.getContext(), "Cannot open the file", Toast.LENGTH_SHORT).show();
                             }
 
                         } else {
@@ -63,7 +63,7 @@ public class DirectoryRecyclerViewAdapter extends RecyclerView.Adapter<Directory
                                 int newPos = pagerAdapter.addDir(item);
                                 viewPager.setCurrentItem(newPos, true);
                             } else {
-                                Toast.makeText(view.getContext(), "nejde", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(view.getContext(), "Cannot open the directory", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }
@@ -83,9 +83,7 @@ public class DirectoryRecyclerViewAdapter extends RecyclerView.Adapter<Directory
     @Override
     public DirectoryRecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_main_row, parent, false);
-        ViewHolder vh = new ViewHolder(v);
-
-        return vh;
+        return new ViewHolder(v);
     }
 
     @Override
